@@ -102,3 +102,10 @@ CREATE TABLE IF NOT EXISTS Tags (
     FOREIGN KEY(fk_UserId)
         REFERENCES Users (id)
 );
+
+CREATE TABLE IF NOT EXISTS Remind (
+    id                      INTEGER     NOT NULL,
+    user                    INTEGER     NOT NULL,
+    message                 TEXT        NOT NULL,
+    time                    INTEGER     NOT NULL
+);

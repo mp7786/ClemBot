@@ -5,6 +5,7 @@ import discord
 import discord.ext.commands as commands
 from discord.ext.commands import converter
 
+from bot.data.remind_repository import RemindRepository
 from bot.utils import converters
 
 log = logging.getLogger(__name__)
@@ -19,7 +20,7 @@ class RemindCog(commands.Cog):
     async def remind(self, ctx: commands.Context, wait: converters.Duration, message: str):
         user = {}
         user["id"] = ctx.message.author
-        user["time"] = wait
+        user["time"] = wait:while
         user["Message"] = message
         self.current.append(user)
         self.bot.scheduler.schedule_at(self.test(wait), time=user["time"])
